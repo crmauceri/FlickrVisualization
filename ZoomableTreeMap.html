@@ -215,12 +215,16 @@
 		    .style("visibility", "visible")
 		    .style("pointer-events", "visible")
 		    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-		    .on("click", function(d) { return zoom_edge(node == d.parent ? root : d.parent); });
+		    .on("click", function(d) {return zoom_edge(node == d.parent ? root : d.parent); });
 		
 		cell.append("svg:rect")
 			.attr("width", function(d) { return d.dx - 1; })
 		  .attr("height", function(d) { return d.dy - 1; })
-			.style("fill", function(d) { return color(d.parent.name); });
+			.style("fill", function(d) { if (typeof d.parent == "undefined") {
+					  						return color(""); 
+										 } else {
+											return color(d.parent.name);
+										 }});
 		  
 		cell.append("svg:image")
 		    .attr("width", function(d) { return d.dx - 1; })
