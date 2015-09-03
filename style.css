@@ -1,0 +1,33 @@
+body {
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica;
+}
+
+#header, #footer, #content {
+  width: 100%;
+  z-index: 1;
+  font-weight: 300;
+}
+
+#treemap_div{
+	float: left;
+	display: block;
+}
+
+#right_menu{
+	float: left;
+	margin: auto;
+	margin-top: 40px;
+}
+
+#header {
+  text-align: left;
+  font-size: 36px;
+}
+
+#footer {
+  clear: both;
+  text-align: right;
+}
